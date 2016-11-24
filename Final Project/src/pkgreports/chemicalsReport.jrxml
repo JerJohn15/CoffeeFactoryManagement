@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-09T12:25:34 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="chemicalsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2cc29ccd-9442-44ff-b0e4-cdd0570430b4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * from mg_inputs]]>
+	</queryString>
+	<field name="input_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="input_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="input_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="initial_amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="remaining_amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price_per_kg" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_recorded" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="availability" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="input_type">
+		<groupExpression><![CDATA[$F{input_type}]]></groupExpression>
+	</group>
+	<group name="availability">
+		<groupExpression><![CDATA[$F{availability}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="500" height="46" uuid="719684b4-19e2-437f-a2b4-2494f6f886f4"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUGAGA FACTORY INPUT CHEMICALS REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="30" uuid="c558024e-263b-4989-bd64-4cf4dc4dfa9d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="0" width="203" height="30" uuid="240506ea-86e8-4cc9-a0d3-d8b5391347bf"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="0" width="72" height="30" uuid="ddee4787-6703-4f10-8c31-f7d18d13a796"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="0" width="92" height="30" uuid="6e11f803-d85e-42e1-83de-7c72efa16e6c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INIT AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="82" height="30" uuid="4322adef-983b-4009-937b-eca7966459eb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REMAINING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="502" y="0" width="100" height="30" uuid="7fb84f0a-70cd-44b7-afb6-dbe659c54f9e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRICE /KG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="602" y="0" width="100" height="30" uuid="33f26a7c-4e2b-4f87-9693-e8fa3b6e7444"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REC DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="0" width="100" height="30" uuid="c81d41f9-c73c-483a-9abb-0bfb83534ff0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AVAILABILITY]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="50" height="30" uuid="320b2fe5-4623-4884-bef9-884669d15013"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{input_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="2" width="203" height="30" uuid="0674016c-19c3-4e9f-b25b-b3a9bbfc73ea"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{input_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="2" width="72" height="30" uuid="bd1c8cd6-b975-4bec-bb9e-a452a7a429ec"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{input_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="2" width="92" height="30" uuid="7a87fb00-30e2-4eb3-91d7-c0fec8a1e895"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{initial_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="2" width="85" height="30" uuid="3e1f0e05-7f97-48ec-8a89-667601ba8fee"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remaining_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="2" width="100" height="30" uuid="b1b1c5d3-45fc-4828-adcc-ed4216c80b75"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price_per_kg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="2" width="100" height="30" uuid="fb690786-87c1-4edf-b311-dbcea469403c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date_recorded}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="702" y="2" width="100" height="30" uuid="38bd2948-c352-44e6-9f6c-66a8d9fc9f2b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{availability}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

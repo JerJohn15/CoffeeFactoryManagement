@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgmanager.FXchemicalsController">
+    <stylesheets>
+        <URL value="@/pkgcommon/style.css" />
+    </stylesheets>
+   <children>
+      <Separator layoutX="14.0" layoutY="39.0" prefHeight="9.0" prefWidth="1364.0" />
+      <GridPane layoutX="30.0" layoutY="115.0" prefHeight="249.0" prefWidth="401.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="FARM INPUT NAME" />
+            <Label text="FARM INPUT TYPE" GridPane.rowIndex="1" />
+            <Label prefHeight="35.0" prefWidth="259.0" text="AMOUNT STOCKED (Kgs)" GridPane.rowIndex="2" />
+            <Label prefHeight="41.0" prefWidth="273.0" text="PRCE PER UNIT KILOGRAM" GridPane.rowIndex="3" />
+            <TextField fx:id="txtInputName" GridPane.columnIndex="1" />
+            <ComboBox fx:id="comInputTypes" prefHeight="25.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAmount" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="100.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtPrice" prefHeight="25.0" prefWidth="138.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="100.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+      <Separator layoutX="454.0" layoutY="54.0" orientation="VERTICAL" prefHeight="677.0" prefWidth="11.0" />
+      <TableView fx:id="tableView" layoutX="480.0" layoutY="59.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="871.0">
+        <columns>
+          <TableColumn fx:id="colID" editable="false" prefWidth="55.0" resizable="false" text=" ID" />
+          
+            <TableColumn fx:id="colName" editable="false" prefWidth="198.0" resizable="false" text="INPUT NAME" />
+            <TableColumn fx:id="colType" editable="false" prefWidth="126.0" text="INPUT TYPE" />
+            <TableColumn prefWidth="69.0" resizable="false" text="AMOUNTS(Kilograms)">
+               <columns>
+                  <TableColumn fx:id="colInitial" editable="false" text="INITIAL " />
+                  <TableColumn fx:id="colRemaining" editable="false" text="REMAINING " />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="colPrice" editable="false" prefWidth="103.0" resizable="false" text="PRICE /KG" />
+            <TableColumn fx:id="colDate" editable="false" prefWidth="112.0" resizable="false" text="DATE RECORDED" />
+            <TableColumn fx:id="colAvailability" editable="false" prefWidth="114.0" resizable="false" text="AVAILABILITY" />
+        </columns>
+      </TableView>
+      <Separator layoutX="1.0" layoutY="374.0" prefHeight="4.0" prefWidth="454.0" />
+      <HBox layoutX="16.0" layoutY="422.0" prefHeight="35.0" prefWidth="427.0" spacing="40.0">
+         <children>
+            <Button fx:id="btnNew" minWidth="70.0" mnemonicParsing="false" onAction="#newAction" prefWidth="70.0" text="NEW">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnEdit" minWidth="70.0" mnemonicParsing="false" onAction="#editInput" prefWidth="70.0" text="EDIT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnSave" minWidth="70.0" mnemonicParsing="false" onAction="#saveInput" prefWidth="70.0" text="SAVE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearInputs" prefWidth="70.0" text="CLEAR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <Label layoutX="118.0" layoutY="374.0" prefHeight="25.0" prefWidth="208.0" text="INPUT REGISTRATION OPTIONS" />
+      <Label layoutX="45.0" layoutY="513.0" prefHeight="25.0" prefWidth="177.0" text="TABLE COMMAND OPTIONS" />
+      <VBox layoutX="53.0" layoutY="552.0" prefHeight="167.0" prefWidth="160.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnToExcel" mnemonicParsing="false" onAction="#toExcel" prefHeight="25.0" prefWidth="155.0" text="EXPORT  TO EXCEL FILE" />
+            <Button fx:id="btnRefreshTable" mnemonicParsing="false" onAction="#refreshTable" prefHeight="25.0" prefWidth="155.0" text="REFRESH  TABLE" />
+            <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#generateReport" prefHeight="25.0" prefWidth="155.0" text="INPUTS REPORT" />
+         </children>
+      </VBox>
+      <Separator layoutX="1.0" layoutY="469.0" prefHeight="25.0" prefWidth="454.0" />
+      <Separator layoutX="216.0" layoutY="485.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="11.0" />
+      <Label layoutX="248.0" layoutY="513.0" prefHeight="25.0" prefWidth="192.0" text="VIEW OPTIONS" />
+      <VBox layoutX="268.0" layoutY="552.0" spacing="8.0">
+         <children>
+            <RadioButton fx:id="rdDefault" mnemonicParsing="false" onAction="#viewDefault" text="ALL">
+               <toggleGroup>
+                  <ToggleGroup fx:id="viewsToogle" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rdAvail" mnemonicParsing="false" onAction="#viewAvailable" text="AVAILABLE" toggleGroup="$viewsToogle" />
+            <RadioButton fx:id="rdUnavail" mnemonicParsing="false" onAction="#viewUnavailable" text="UNAVAILABLE" toggleGroup="$viewsToogle" />
+            <RadioButton fx:id="rdHerb" mnemonicParsing="false" onAction="#viewHerbicides" text="HERBICIDES" toggleGroup="$viewsToogle" />
+            <RadioButton fx:id="rdFert" mnemonicParsing="false" onAction="#viewFertilizers" text="FERTILIZERS" toggleGroup="$viewsToogle" />
+            <RadioButton fx:id="rdAvailFert" mnemonicParsing="false" onAction="#viewAvailFert" text="AVAILABLE FERTILIZERS" toggleGroup="$viewsToogle" />
+            <RadioButton fx:id="rdAvailHerb" mnemonicParsing="false" onAction="#viewAvailHerbs" text="AVAILABLE HERBICIDES" toggleGroup="$viewsToogle" />
+         </children>
+      </VBox>
+      <MenuBar layoutY="-2.0" prefHeight="30.0" prefWidth="1366.0">
+        <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="clerkMI" mnemonicParsing="false" onAction="#clerkView" text="Clerk View" />
+                        <MenuItem fx:id="logoutMI" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+                        <MenuItem fx:id="quitMI" mnemonicParsing="false" onAction="#quitOption" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="newClerkMI" mnemonicParsing="false" onAction="#ActionNewClerk" text="New Clerk" />
+                        <MenuItem fx:id="changePassMI" mnemonicParsing="false" onAction="#ActionChangePass" text="Change Password" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Options">
+                    <items>
+                        <MenuItem fx:id="farmersMI" mnemonicParsing="false" onAction="#FarmersView" text="Farmers" />
+                        <MenuItem fx:id="employeesMI" mnemonicParsing="false" onAction="#EmployeeView" text="Employees" />
+                        <MenuItem fx:id="attendanceMI" mnemonicParsing="false" onAction="#AttendanceView" text="Attendance" />
+                        <MenuItem fx:id="exportationMI" mnemonicParsing="false" onAction="#ExportationView" text="Exportation" />
+                        <MenuItem fx:id="chemicalMI" mnemonicParsing="false" onAction="#ChemicalsView" text="Chemicals" />
+                        <Menu mnemonicParsing="false" text="Proccess Payments">
+                            <items>
+                                <MenuItem fx:id="employeePaymentMI" mnemonicParsing="false" onAction="#EmployeePaymentsView" text="Employee" />
+                                <MenuItem fx:id="farmerpaymentsMI" mnemonicParsing="false" onAction="#FarmerPaymentsView" text="Farmer" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="Documentation" />
+                    </items>
+                </Menu>
+            </menus>
+      </MenuBar>
+      <TextField fx:id="txtSearch" layoutX="24.0" layoutY="59.0" prefHeight="25.0" prefWidth="339.0" promptText="Search chemical by name ..." />
+      <Button fx:id="btnSearch" layoutX="379.0" layoutY="59.0" mnemonicParsing="false" onAction="#searchCommand" text="Search" />
+   </children>
+</AnchorPane>

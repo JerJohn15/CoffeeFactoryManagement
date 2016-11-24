@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-12T14:11:53 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empPayments" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="id" class="java.lang.Integer"/>
+	<parameter name="twage" class="java.lang.Double"/>
+	<parameter name="deductions" class="java.lang.Double"/>
+	<parameter name="days" class="java.lang.Integer"/>
+	<parameter name="net" class="java.lang.Double"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="400" height="40" uuid="d4b51f3b-2bcb-4a2f-bf7e-78f91a265998"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEES WAGES PAYMENTS REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="42e8983f-f5d0-476f-8505-d892247925a8"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="120" height="30" uuid="f804d30c-9f1e-4774-bfa1-9e539e38c938"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL WAGE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="120" height="30" uuid="40488fd5-b3a9-48c9-bd37-97508d630c3d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEDUCTIONS ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="90" height="30" uuid="9f6afaef-20aa-4deb-8319-d74f63b867a8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAYS ABSENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="125" height="30" uuid="35f00e90-d97f-4bc7-af31-f0b4e8f380c3"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NET WAGE (Kshs)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="1" width="80" height="30" uuid="dd54e10c-b8b6-42a9-a11c-6ec0a64113de"/>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="1" width="120" height="30" uuid="f5323791-7eb8-4ab4-bf3a-a7f725091d52"/>
+				<textFieldExpression><![CDATA[$P{twage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="1" width="120" height="30" uuid="9f7b4374-01dd-4119-bb3d-bff5f6111524"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{deductions}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="1" width="90" height="30" uuid="c057f2a0-7500-4601-aee2-3db9f19fa533"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{days}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="1" width="125" height="30" uuid="96effec7-2fae-4f5e-8742-a426f6ab3f12"/>
+				<textFieldExpression><![CDATA[$P{net}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-07T13:35:04 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="finalReceipt" pageWidth="350" pageHeight="400" columnWidth="310" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a2f4c70-b495-4c2d-afdd-e111be1f5872">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="_name" class="java.lang.String"/>
+	<parameter name="_id" class="java.lang.String"/>
+	<parameter name="_cum" class="java.lang.String"/>
+	<parameter name="_amount" class="java.lang.String"/>
+	<parameter name="_clerk" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="290" height="30" uuid="dc99bb89-e2bf-4724-b572-67d8a71aefa0"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUGAGA FACTORY COFFEE DELIVERY RECEIPT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="120" height="19" uuid="731a407e-b740-452a-ac3b-eab1db60aca0"/>
+				<text><![CDATA[Official receipt]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="190" y="0" width="120" height="19" uuid="81991e5c-86f7-494a-a78e-016f4f387c7c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="310" height="1" uuid="1757b839-829d-4302-b660-dc36b050d0b1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="208" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="20" width="100" height="25" uuid="7d46c972-ec7e-4c5e-9d69-7b2c4a1a8504"/>
+				<text><![CDATA[FARMER ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="58" width="100" height="25" uuid="a6094a38-49ec-4012-bc2a-807cb2250564"/>
+				<text><![CDATA[FARMER NAMES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="96" width="100" height="25" uuid="f6f38237-32e6-4adc-8345-49483b518207"/>
+				<text><![CDATA[CUMULATED KGS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="137" width="100" height="25" uuid="2d382bd6-a186-4777-885d-85fa284ca210"/>
+				<text><![CDATA[TODAY DELIVERY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="171" width="100" height="25" uuid="49cb827d-10c1-4b66-b599-096dd45b6f72"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[generated at :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="20" width="152" height="25" uuid="b4926bb3-a22e-4437-8883-34c43382c8e0"/>
+				<textFieldExpression><![CDATA[$P{_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="150" y="58" width="150" height="25" uuid="b81806b6-d6e7-412f-8006-2245ea79237f"/>
+				<textFieldExpression><![CDATA[$P{_name}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="96" width="150" height="25" uuid="f4a1b962-62fc-4fc3-9509-e084797d2a7c"/>
+				<textFieldExpression><![CDATA[$P{_cum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="137" width="150" height="25" uuid="727a7aa9-3d0e-4d54-b963-8f6c89795203"/>
+				<textFieldExpression><![CDATA[$P{_amount}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="150" y="174" width="150" height="22" uuid="22c0199e-9da9-45ad-9f5c-7ae58cc7b949"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="0" width="120" height="20" uuid="6eb7503f-5cbf-4e93-8097-0bbdcf3ac63a"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[You were served by :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="0" width="90" height="20" uuid="a1d3e9c2-7d50-4c9b-9b56-797e3fad8a85"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{_clerk}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

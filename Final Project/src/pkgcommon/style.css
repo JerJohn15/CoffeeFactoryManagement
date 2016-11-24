@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 21, 2015, 1:49:56 PM
+    Author     : malware
+*/
+.default-label{
+    -fx-font-size:14px;
+    -fx-pref-height:30;
+}
+.textfield{
+    -fx-font-size:14px;
+    -fx-pref-height:30;
+}
+.label-header{
+    -fx-font:18pt sans-serif;
+    -fx-text-alignment: center;    
+}
+.label-section{
+    -fx-font:15px sans-serif;
+
+}
+.btn{
+    -fx-font-size:14px;    
+}
+.check-box{
+    -fx-font-size:14px;
+}
+#my_table .table-column{
+    -fx-alignment: CENTER_LEFT;
+}

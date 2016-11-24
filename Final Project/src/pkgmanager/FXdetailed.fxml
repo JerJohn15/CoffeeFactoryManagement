@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="558.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgmanager.FXdetailedController">
+   <children>
+      <Label alignment="CENTER" layoutX="268.0" layoutY="14.0" prefHeight="17.0" prefWidth="264.0" text="DETAILED INFORMATION" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="357.0" layoutY="61.0" orientation="VERTICAL" prefHeight="458.0" prefWidth="9.0" />
+      <TableView fx:id="delivery" layoutX="382.0" layoutY="92.0" prefHeight="202.0" prefWidth="383.0" />
+      <TableView fx:id="inputs" layoutX="385.0" layoutY="337.0" prefHeight="179.0" prefWidth="383.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="486.0" layoutY="62.0" prefHeight="17.0" prefWidth="205.0" text="COFFEE DELIVERY HISTORY" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="477.0" layoutY="311.0" prefHeight="20.0" prefWidth="236.0" text="FARM INPUTS LOANED HISTORY" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="24.0" layoutY="61.0" prefHeight="9.0" prefWidth="305.0" />
+      <Separator layoutX="21.0" layoutY="327.0" prefHeight="9.0" prefWidth="305.0" />
+      <Separator layoutX="21.0" layoutY="437.0" prefHeight="9.0" prefWidth="305.0" />
+      <GridPane layoutX="22.0" layoutY="66.0" prefHeight="262.0" prefWidth="334.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="188.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="146.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="FARMER ID">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="SIR NAME" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="MID NAME" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="LAST NAME" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="MOBILE NO" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="NATIONAL ID NO" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="ACCOUNT NO" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="farmerid" prefHeight="20.0" prefWidth="180.0" text="1" textFill="#111111" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="sirname" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="midname" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="lastname" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="mobileno" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="nationalid" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="accountno" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label text="SACCO ENROLLED" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="DATE REGISTERED" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="sacco" prefHeight="20.0" prefWidth="180.0" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="date" prefHeight="20.0" prefWidth="180.0" text="11" textFill="#111111" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="24.0" layoutY="337.0" prefHeight="103.0" prefWidth="320.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="179.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="126.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="CUMULATED KILOGRAMS">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="DELIVERY TIMES" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="ACCOUNT STATUS" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="cumKgs" prefHeight="20.0" prefWidth="120.0" text="1" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="countDelivery" prefHeight="20.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="status" prefHeight="20.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="24.0" layoutY="441.0" prefHeight="79.0" prefWidth="299.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="188.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="111.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="INPUTS DEBT">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label text="NO OF INPUTS LOANED" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="debt" prefHeight="20.0" prefWidth="120.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="countLoaned" prefHeight="20.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

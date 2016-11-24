@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-12T15:16:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="336d82e4-f0f9-4056-b357-0e183d03507b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="bWdfYWJzZW50ZWVzICwxNDIsMTUsZjBmZjk0ODAtNTVlOS00NjAxLWIyNjYtZjViOWZkNTJkMTE4&#xA;O21nX2VtcGxveWVlcyAsMTUsMTUsMjcyNDc2NjQtODA1Ni00MDJiLWFmNGYtYzAyMzRhMzhjNjg4Ow=="/>
+	<parameter name="month" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT e.employee_id,e.wage as "TOTAL",(count(a.emp_id)*'0.0') as "PENALTY",count(a.emp_id) as "DAYS ABSENT",(e.wage -count(a.emp_id) * '') as "NET" FROM mg_employees e left join mg_absentees a on e.employee_id=a.emp_id and a.reason in ('','','','','') and a.calender_month='' GROUP BY e.employee_id]]>
+	</queryString>
+	<field name="employee_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL" class="java.lang.Double"/>
+	<field name="PENALTY" class="java.lang.Double"/>
+	<field name="DAYS ABSENT" class="java.lang.Long"/>
+	<field name="NET" class="java.lang.Double"/>
+	<variable name="sum_total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL}]]></variableExpression>
+	</variable>
+	<variable name="sum_penalty" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{PENALTY}]]></variableExpression>
+	</variable>
+	<variable name="sum_net" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{NET}]]></variableExpression>
+	</variable>
+	<group name="employee_id">
+		<groupExpression><![CDATA[$F{employee_id}]]></groupExpression>
+	</group>
+	<group name="TOTAL">
+		<groupExpression><![CDATA[$F{TOTAL}]]></groupExpression>
+	</group>
+	<group name="PENALTY">
+		<groupExpression><![CDATA[$F{PENALTY}]]></groupExpression>
+	</group>
+	<group name="DAYS ABSENT">
+		<groupExpression><![CDATA[$F{DAYS ABSENT}]]></groupExpression>
+	</group>
+	<group name="NET">
+		<groupExpression><![CDATA[$F{NET}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="400" height="40" uuid="7bcad536-9a2b-45d5-ae49-8fc898a3040d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[MUGAGA FACTORY EMPLOYEES WAGE  REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="9" width="90" height="21" uuid="859b3d6a-358c-4a5b-9c45-3b06c68239a5"/>
+				<text><![CDATA[PAYMENTS FOR  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="9" width="124" height="21" uuid="16818add-63f9-4382-bc53-0a61aad9a78f"/>
+				<textFieldExpression><![CDATA[$P{month}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="30" uuid="f8f1e135-0b6e-41ac-994b-f3a3ca9e3acc"/>
+				<text><![CDATA[employee_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="30" uuid="a81e4353-73c4-44c6-9443-c3fda7f69211"/>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="30" uuid="f949bdb5-6411-41cf-9776-16a9d05a423f"/>
+				<text><![CDATA[PENALTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="30" uuid="95093855-dd12-4108-b6e3-8b0d0395ed50"/>
+				<text><![CDATA[DAYS ABSENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="30" uuid="30d4d8e3-74ce-4e14-8efe-ddc601b14e29"/>
+				<text><![CDATA[NET]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="111" height="30" uuid="d7b43bfb-07a3-4707-b3f2-6acbbaa77e22"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="2" width="111" height="30" uuid="5e1fa497-d2ad-4734-94ab-1100705f8fdf"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="2" width="111" height="30" uuid="ac474abe-3b2f-4383-9913-d1b807d37533"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PENALTY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="2" width="111" height="30" uuid="b889054c-4052-4aef-8574-5669386f619a"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DAYS ABSENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="2" width="111" height="30" uuid="8e910ebc-a618-435a-a107-5aad9dbf04a6"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NET}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="1" width="110" height="29" uuid="01bd3400-2ed0-433b-ae1f-7b19af7b46d5"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sum_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="109" height="30" uuid="6a8d5ece-3d0c-4713-a892-c759c92fbd08"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sum_penalty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="1" width="111" height="29" uuid="6d630b2a-4c2e-421f-93d5-03d79444ca5d"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sum_net}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="110" height="29" uuid="7902562d-f6cf-4a69-a229-660f51bbfa2e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTALS]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

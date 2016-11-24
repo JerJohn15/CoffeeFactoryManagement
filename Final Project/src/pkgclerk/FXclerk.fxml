@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1366.0" stylesheets="@../pkgcommon/style.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgclerk.FXclerkController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View " />
+                  <MenuItem fx:id="logoutMI" mnemonicParsing="false" onAction="#logoutOperation" text="Log Out" />
+                  <MenuItem fx:id="quitMI" mnemonicParsing="false" onAction="#closeOperation" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Account">
+            <items>
+              <MenuItem fx:id="accountMI" mnemonicParsing="false" onAction="#viewMyAccount" text="My Account" />
+                  <MenuItem fx:id="cgUsernameMI" mnemonicParsing="false" onAction="#changeUsernameOperation" text="Change Password" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMI" mnemonicParsing="false" text="About" />
+                  <MenuItem fx:id="doumentationMI" mnemonicParsing="false" onAction="#viewDocumentation" text="Documentation" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Cherry Recording">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.37145242070116863" layoutX="195.0" layoutY="83.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="646.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane maxWidth="442.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="442.0">
+                                 <children>
+                                    <Label layoutX="27.0" layoutY="79.0" prefHeight="32.0" prefWidth="146.0" styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Search farmer by ID" />
+                                    <TextField fx:id="txtSearchF" layoutX="239.0" layoutY="83.0" prefHeight="25.0" prefWidth="101.0" promptText="Search ...">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></TextField>
+                                    <Label alignment="CENTER" layoutX="27.0" layoutY="23.0" prefHeight="35.0" prefWidth="345.0" styleClass="label-section" text="RECORDING SECTION" />
+                                    <Separator layoutX="16.0" layoutY="67.0" prefHeight="1.0" prefWidth="417.0" />
+                                    <Button fx:id="btnSearch" layoutX="342.0" layoutY="83.0" mnemonicParsing="false" onAction="#searchInfo" text="SEARCH">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Button>
+                                    <Separator layoutX="16.0" layoutY="124.0" prefHeight="7.0" prefWidth="417.0" />
+                                    <Label layoutX="27.0" layoutY="141.0" prefHeight="35.0" prefWidth="345.0" styleClass="label-section" text="IDENTIFICATION DETAILS" />
+                                    <GridPane layoutX="81.0" layoutY="182.0" prefHeight="190.0" prefWidth="316.0" vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Farmer ID" />
+                                          <Label styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Sur Name" GridPane.rowIndex="1" />
+                                          <Label styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Middle Name" GridPane.rowIndex="2" />
+                                          <Label styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Last Name" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtFID" editable="false" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="txtSN" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="txtMDNM" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="txtLSTNM" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Separator layoutX="16.0" layoutY="394.0" prefHeight="0.0" prefWidth="418.0" />
+                                    <Label layoutX="105.0" layoutY="409.0" prefHeight="27.0" prefWidth="291.0" styleClass="label-section" text="RECORDING  FINALISATION" />
+                                    <GridPane hgap="12.0" layoutX="35.0" layoutY="473.0" prefHeight="120.0" prefWidth="391.0" vgap="12.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label prefHeight="28.0" prefWidth="147.0" styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Kilograms Delivered" GridPane.rowIndex="1" />
+                                          <CheckBox fx:id="boolPrint" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" style="-fx-font-size: 12;" text="Print Farmer Receipts" textFill="#120a43" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Label styleClass="default-label" stylesheets="@../pkgcommon/style.css" text="Cumulatave Kilograms" />
+                                          <TextField fx:id="txtCum" alignment="CENTER" editable="false" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtAmountDelivered" prefHeight="28.0" prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnRecrd" layoutX="205.0" layoutY="612.0" mnemonicParsing="false" onAction="#recordDelivery" prefHeight="30.0" prefWidth="109.0" text="RECORD">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Button>
+                                    <Button fx:id="btnClear" layoutX="336.0" layoutY="612.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="30.0" prefWidth="89.0" text="CLEAR">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Button>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="750.0" prefHeight="160.0" prefWidth="750.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="292.0" layoutY="335.0" prefHeight="41.0" prefWidth="354.0" styleClass="label-section" text="RECORDS STATISTICS" />
+                                    <Separator layoutX="68.0" layoutY="397.0" prefHeight="6.0" prefWidth="841.0" />
+                                    <GridPane layoutX="66.0" layoutY="384.0" prefHeight="219.0" prefWidth="824.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="26.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.66668701171875" minWidth="10.0" prefWidth="458.3333740234375" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.33331298828125" minWidth="10.0" prefWidth="199.6666259765625" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label styleClass="default-label" text="Seasonal Year" />
+                                          <Label styleClass="default-label" text="Today's date" GridPane.rowIndex="1" />
+                                          <Label styleClass="default-label" text="Total amount of Coffee recorded today" GridPane.rowIndex="3" />
+                                          <Label styleClass="default-label" text="Total number of registered farmers" GridPane.rowIndex="2" />
+                                          <Label styleClass="default-label" text="Total Number of farmers who have delivered today" GridPane.rowIndex="4" />
+                                          <TextField fx:id="stYear" editable="false" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="stDate" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="stRegFarmers" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="stAmountToday" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="stNoDeliveredToday" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></TextField>
+                                          <Label prefHeight="29.0" prefWidth="269.0" styleClass="default-label" text="Estimate of farmers still to deliver" GridPane.rowIndex="5" />
+                                          <TextField fx:id="stEstimate" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Label alignment="CENTER" layoutX="241.0" layoutY="16.0" prefHeight="41.0" prefWidth="354.0" styleClass="label-section" text="FARMER DELIVERY HISTORY" />
+                                    <TableView fx:id="tableHistory" layoutX="53.0" layoutY="66.0" prefHeight="200.0" prefWidth="660.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="37.0" />
+                                    <Button fx:id="btnRefresh" layoutX="792.0" layoutY="631.0" mnemonicParsing="false" onAction="#refreshStats" prefHeight="31.0" prefWidth="57.0">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../pkgimages/REFD.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Farm Inputs Management">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="359.0" layoutY="3.0" orientation="VERTICAL" prefHeight="669.0" prefWidth="22.0" />
+                        <Separator layoutX="870.0" layoutY="4.0" orientation="VERTICAL" prefHeight="665.0" prefWidth="6.0" />
+                        <Label layoutX="139.0" layoutY="31.0" text="CLIENT DETAILS" />
+                        <Label layoutX="543.0" layoutY="30.0" text="INPUTS AVAILABILITY" />
+                        <Label layoutX="1115.0" layoutY="31.0" text="LEASE" />
+                        <GridPane layoutX="914.0" layoutY="80.0" prefHeight="220.0" prefWidth="427.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="CHEMICAL ID" />
+                              <Label text="FARMER ID" GridPane.rowIndex="1" />
+                              <Label text="QUANTITY TO BORROW IN KGS" GridPane.rowIndex="2" />
+                              <Label text="CHEMICAL NAME" GridPane.rowIndex="3" />
+                              <TextField fx:id="txxChemID" editable="false" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="txtInputFarmerID" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="txtQty" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="txtChemName" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <Button fx:id="btnAddToList" mnemonicParsing="false" onAction="#addToList" prefHeight="25.0" prefWidth="221.0" text="ADD TO LIST" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Button>
+                              <Label text="CHEMICAL TYPE" GridPane.rowIndex="4" />
+                              <TextField fx:id="txtType" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="tableLoans" layoutX="905.0" layoutY="324.0" prefHeight="264.0" prefWidth="442.0">
+                          <columns>
+                            <TableColumn fx:id="col_loan_inputid" editable="false" prefWidth="122.0" sortable="false" text="INPUT ID" />
+                            <TableColumn fx:id="col_loan_farmerid" editable="false" prefWidth="160.0" sortable="false" text="FARMER ID" />
+                              <TableColumn fx:id="col_loan_quantity" editable="false" prefWidth="158.0" sortable="false" text="QUATITY TO BORROW" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnRecordLoaning" layoutX="1201.0" layoutY="613.0" mnemonicParsing="false" onAction="#commitLoans" prefHeight="33.0" prefWidth="146.0" text="RECORD">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Button>
+                        <TableView fx:id="tableInputs" layoutX="393.0" layoutY="113.0" prefHeight="539.0" prefWidth="473.0">
+                           <columns>
+                              <TableColumn fx:id="col_id" editable="false" prefWidth="40.0" resizable="false" text="ID" />
+                              <TableColumn fx:id="col_name" editable="false" prefWidth="210.0" resizable="false" text="INPUT NAME" />
+                              <TableColumn fx:id="col_type" editable="false" prefWidth="127.0" resizable="false" text="TYPE" />
+                              <TableColumn fx:id="col_remaining" editable="false" prefWidth="93.0" resizable="false" text="REMAINING" />
+                           </columns></TableView>
+                        <Separator layoutX="511.0" layoutY="47.0" prefWidth="200.0" />
+                        <Label layoutX="398.0" layoutY="72.0" prefHeight="26.0" prefWidth="107.0" text="INPUTS TO VIEW" />
+                        <RadioButton fx:id="rdAll" layoutX="528.0" layoutY="77.0" mnemonicParsing="false" onAction="#checkAll" text="ALL">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="VIEWS" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rdChem" layoutX="606.0" layoutY="77.0" mnemonicParsing="false" onAction="#checkChemicals" text="CHEMICALS" toggleGroup="$VIEWS" />
+                        <RadioButton fx:id="rdFert" layoutX="727.0" layoutY="77.0" mnemonicParsing="false" onAction="#checkFertilizers" text="FERTILIZERS" toggleGroup="$VIEWS" />
+                        <GridPane layoutX="12.0" layoutY="139.0" prefHeight="329.0" prefWidth="353.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="SUR NAME" />
+                              <Label text="MIDDLE NAME" GridPane.rowIndex="1" />
+                              <Label text="LAST NAME" GridPane.rowIndex="2" />
+                              <Label text="CUMULATIVE KILOGRAMS" GridPane.rowIndex="3" />
+                              <Label text="STATUS" GridPane.rowIndex="4" />
+                              <TextField fx:id="inputSname" editable="false" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="inputMidname" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="inputLsname" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="inputCumKgs" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                              <TextField fx:id="inputStatus" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></TextField>
+                           </children>
+                        </GridPane>
+                        <TextField fx:id="searchInputTxt" layoutX="42.0" layoutY="79.0" prefHeight="36.0" prefWidth="243.0" promptText="Search farmer id" />
+                        <Button fx:id="inputsSerchBtn" layoutX="293.0" layoutY="77.0" mnemonicParsing="false" onAction="#inputsSearchInfo" prefHeight="39.0" prefWidth="20.0">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../pkgimages/Search.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="32.0" layoutY="129.0" prefHeight="3.0" prefWidth="316.0" />
+                        <Separator layoutX="29.0" layoutY="537.0" prefHeight="8.0" prefWidth="323.0" />
+                        <Button fx:id="btnRemoveRow" layoutX="906.0" layoutY="613.0" mnemonicParsing="false" onAction="#removeRow" prefHeight="33.0" prefWidth="123.0" text="REMOVE" />
+                        <Button fx:id="btnClearTable" layoutX="1065.0" layoutY="613.0" mnemonicParsing="false" onAction="#clearTable" prefHeight="34.0" prefWidth="116.0" text="CLEAR" />
+                        <Button fx:id="btnClearSearchResults" layoutX="188.0" layoutY="563.0" mnemonicParsing="false" onAction="#ClearTextfields" prefHeight="25.0" prefWidth="156.0" text="CLEAR SEARCH RESULTS">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

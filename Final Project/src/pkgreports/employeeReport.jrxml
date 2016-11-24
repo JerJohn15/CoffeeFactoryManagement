@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-07T23:12:36 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employeeReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="088b1ac1-2c28-4fcd-9ec3-e24cd0a9386c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * FROM mg_employees]]>
+	</queryString>
+	<field name="employee_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="national_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="surname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="middlename" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lastname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_registered" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_of_birth" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="job_category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="wage" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emp_status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{job_category}]]></groupExpression>
+		<groupHeader>
+			<band height="29">
+				<textField>
+					<reportElement x="0" y="1" width="154" height="25" backcolor="#D9D4D4" uuid="169970e8-fd42-495a-8fd4-1559a23fa552"/>
+					<textElement>
+						<font size="11" isBold="false" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{job_category}.toUpperCase()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="0" width="497" height="40" uuid="a669c59e-be47-4cd2-ae9f-dbd465f5ee4a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUGAGA FACTORIES  ALL EMPLOYEES REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="82" height="30" uuid="5fed555b-1ae3-4c8a-9107-f3b90a0a3829"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[EMP ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="0" width="72" height="30" uuid="84b2ceaa-d22f-4fed-834f-9e08e13ea429"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NATIONAL ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="0" width="72" height="30" uuid="69473306-1cab-40f9-9223-a09dccbce298"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUR NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="0" width="72" height="30" uuid="3834d194-b690-4a0b-90f1-d9c9d66da887"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[MID NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="72" height="30" uuid="63f02cc3-b29e-4a2c-9000-7dea969cb8b4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LAST NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="72" height="30" uuid="b87b0a2b-b9fb-4348-9125-2da01fb9c3e5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[PHONE NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="0" width="78" height="30" uuid="662df667-d342-4c5e-8a86-891196dc0b4a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REG DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="0" width="77" height="30" uuid="9b50f8fc-a377-487d-bd39-9496a72a60a2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[D.O.B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="597" y="0" width="72" height="30" uuid="330ec75d-ce9e-4733-af27-e55deb0d5b00"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="0" width="60" height="30" uuid="a4dfdc9e-5496-40e7-85f6-8ccd469ea9fc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[WAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="730" y="0" width="72" height="30" uuid="9ba834c6-0cbb-4a9f-8026-f1f6b4646dcd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="82" height="30" uuid="16064727-9406-469b-a18d-d7a2e6d8c567"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{employee_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="1" width="72" height="30" uuid="e7e7cf42-0a63-4788-8f3f-b620134a0d13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{national_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="1" width="72" height="30" uuid="6b98dea3-8238-4723-8fbc-95f806264a41"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{surname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="1" width="72" height="30" uuid="cb517dbb-f908-487d-9729-8fe202e5a645"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{middlename}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="1" width="72" height="30" uuid="0d44469b-d6a3-4843-b1d5-bb7b60874a8e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{lastname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="1" width="60" height="30" uuid="2df89a6c-cdf5-443b-bef7-456da2ce7800"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mobile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="1" width="90" height="30" uuid="c6ebbce4-58c0-4a64-836e-2523f0c364dd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{date_registered}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="1" width="86" height="30" uuid="295884ab-e1ac-4fa4-b1fa-5c57ecf1719d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{date_of_birth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="1" width="58" height="30" uuid="ea5fcc28-99d6-48f8-b3c0-f2e862f591a4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{job_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="1" width="60" height="30" uuid="ea096acd-e40f-4ec0-9627-ddd979ae751d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{wage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="1" width="72" height="30" uuid="aeabd744-98a9-4e27-b805-a7c803e84600"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{emp_status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="63" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="4" width="180" height="28" uuid="e393c5aa-4b57-48f4-93c9-a34cd2e218a6"/>
+				<textElement>
+					<font size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="1" width="100" height="30" uuid="0cf82403-8d44-4764-ba2b-88af206ce7b5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="408" y="1" width="100" height="30" uuid="84c0161c-ad34-4e88-8fc8-7b4eca38d652"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

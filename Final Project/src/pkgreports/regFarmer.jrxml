@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-10T14:14:06 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empReceipt" pageWidth="400" pageHeight="500" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a93db5bc-b22b-480e-b6b4-6a54c139a5e4">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="_job" class="java.lang.String"/>
+	<parameter name="farmerid" class="java.lang.String"/>
+	<parameter name="surname" class="java.lang.String"/>
+	<parameter name="midname" class="java.lang.String"/>
+	<parameter name="lastname" class="java.lang.String"/>
+	<parameter name="national" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="account" class="java.lang.String"/>
+	<parameter name="sacco" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="0" width="290" height="40" uuid="8f1d2e47-e0bb-4b06-b907-26f57cc7cc70"/>
+				<textElement textAlignment="Center">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[MUGAGA COFFEE FACTORY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="190" height="20" uuid="4bb57e2e-98cc-43c4-8f8f-2c8888f79ec1"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Official farmer registration receipt]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="246" y="1" width="100" height="24" uuid="483c3ae2-3957-4932-b081-89440057715b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="269" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="10" y="10" width="130" height="28" uuid="ed664c4d-54eb-4642-84e9-96b599f3a183"/>
+				<text><![CDATA[FARMER ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="38" width="130" height="28" uuid="2397ee0a-d16a-4184-8bed-c863f0c54bfc"/>
+				<text><![CDATA[SIR NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="66" width="130" height="28" uuid="fb2d9e15-c0f0-4f6d-8805-ffc8b0567a6e"/>
+				<text><![CDATA[MIDDLE NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="94" width="130" height="28" uuid="7a8d2bca-a68a-41b7-be50-ce80ee069c37"/>
+				<text><![CDATA[LAST NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="122" width="130" height="28" uuid="cb0c2df1-7dbe-44a4-88bb-8ad522d32756"/>
+				<text><![CDATA[NATIONAL ID NUMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="150" width="130" height="28" uuid="79a8ff50-7a45-410e-acf3-d5f1a10fcb47"/>
+				<text><![CDATA[MOBILE NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="178" width="130" height="28" uuid="04aec7dd-146d-4e71-afb4-af3c64119cad"/>
+				<text><![CDATA[ACCOUNT NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="206" width="130" height="28" uuid="63728155-5d8d-4c7c-b920-60c8f2f881d0"/>
+				<text><![CDATA[SACCO ENROLLED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="234" width="130" height="28" uuid="26d560fc-76f1-4bbf-9fa1-ef9a25dec3d0"/>
+				<text><![CDATA[REGISTRATION TIME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="183" y="10" width="167" height="28" uuid="69049ee1-a680-4180-9a9f-ade9139cd2e5"/>
+				<textFieldExpression><![CDATA[$P{farmerid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="38" width="167" height="28" uuid="5117f612-9e73-4b61-880f-c4e98df485d0"/>
+				<textFieldExpression><![CDATA[$P{surname}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="66" width="167" height="28" uuid="864f5e3e-0bc9-4c49-ab3d-75e14718d5f9"/>
+				<textFieldExpression><![CDATA[$P{midname}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="150" width="167" height="28" uuid="8b4c9394-861a-404d-8d32-f3683a183678"/>
+				<textFieldExpression><![CDATA[$P{mobile}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="122" width="167" height="28" uuid="551ad881-07ef-452b-ae7f-ea84c727425d"/>
+				<textFieldExpression><![CDATA[$P{national}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="94" width="167" height="28" uuid="8882f5a6-1594-4ca6-820d-484eb933c145"/>
+				<textFieldExpression><![CDATA[$P{lastname}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="206" width="167" height="28" uuid="38145889-1ad8-4acd-a71d-b2b828739d87"/>
+				<textFieldExpression><![CDATA[$P{sacco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="178" width="167" height="28" uuid="33f7e4bf-90f2-47ba-8abc-8f93d7ee226e"/>
+				<textFieldExpression><![CDATA[$P{account}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="185" y="233" width="165" height="29" uuid="2f4ee294-69f2-48e0-8780-ff6a4f8eae6a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="1" width="236" height="23" uuid="1a1d3c63-8c11-4a7b-aabc-08fcf8da7132"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Thank you for registering with Mugaga factory]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

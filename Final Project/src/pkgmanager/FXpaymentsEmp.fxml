@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgmanager.FXpaymentsEmpController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="39.0" prefHeight="39.0" prefWidth="367.0" text="EMPLOYEE PAYMENTS PANEL" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="65.0" layoutY="139.0" prefHeight="133.0" prefWidth="278.0" spacing="10.0">
+         <children>
+            <CheckBox fx:id="chkLate" mnemonicParsing="false" text="LATE COMING" />
+            <CheckBox fx:id="chkUnspecified" mnemonicParsing="false" text="UNSPECIFIED" />
+            <CheckBox fx:id="chkExcused" mnemonicParsing="false" text="EXCUSED" />
+            <CheckBox fx:id="chkSuspended" mnemonicParsing="false" text="SUSPENDED" />
+            <CheckBox fx:id="chkHealth" mnemonicParsing="false" text="HEALTH CONSTRAINTS" />
+         </children>
+      </VBox>
+      <Label layoutX="84.0" layoutY="92.0" prefHeight="17.0" prefWidth="200.0" text="SELECT REASON(S) TO PENALISE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="312.0" prefHeight="27.0" prefWidth="116.0" text="PENALTY PER DAY" />
+      <TextField fx:id="txtPenalty" layoutX="194.0" layoutY="313.0" prefHeight="25.0" prefWidth="151.0" />
+      <Separator layoutX="50.0" layoutY="76.0" prefHeight="2.0" prefWidth="303.0" />
+      <Separator layoutX="50.0" layoutY="483.0" prefHeight="3.0" prefWidth="303.0" />
+      <GridPane layoutX="52.0" layoutY="517.0" prefHeight="203.0" prefWidth="303.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="177.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="126.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="MONTH PERIOD" />
+            <Label text="TOTAL WAGE REMITTED" GridPane.rowIndex="1" />
+            <Label text="TOTAL ABSENTISM DAYS" GridPane.rowIndex="2" />
+            <Label text="DEDUCTIONS" GridPane.rowIndex="3" />
+            <Label text="TOTAL NET WAGE" GridPane.rowIndex="4" />
+            <TextField fx:id="tMonth" GridPane.columnIndex="1" />
+            <TextField fx:id="tSalary" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tAbsent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tPenalty" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tNetwage" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearFields" prefHeight="25.0" prefWidth="125.0" text="CLEAR" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnCalculate" layoutX="195.0" layoutY="404.0" mnemonicParsing="false" onAction="#calculatePayments" prefHeight="25.0" prefWidth="151.0" text="CALCULATE" />
+      <Label layoutX="68.0" layoutY="365.0" prefHeight="17.0" prefWidth="98.0" text="SELECT MONTH" />
+      <ComboBox fx:id="comboMonth" layoutX="195.0" layoutY="361.0" prefWidth="150.0" />
+      <TableView fx:id="tablePayments" layoutX="408.0" layoutY="79.0" prefHeight="596.0" prefWidth="911.0" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="17.0">
+         <columns>
+            <TableColumn fx:id="colEmpID" prefWidth="145.0" text="EMPLOYEE ID" />
+            <TableColumn fx:id="colTotalWage" prefWidth="208.0" text="TOTAL WAGE" />
+            <TableColumn fx:id="colPenalty" prefWidth="190.0" text="ABSENTISM PENALTY" />
+            <TableColumn fx:id="colDays" prefWidth="201.0" text="DAYS ABSENT" />
+            <TableColumn fx:id="colNetWage" prefWidth="166.0" text="NET WAGE" />
+         </columns></TableView>
+      <MenuBar layoutX="2.0" layoutY="2.0" prefHeight="25.0" prefWidth="1366.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+        <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="clerkMI" mnemonicParsing="false" onAction="#clerkView" text="Clerk View" />
+                        <MenuItem fx:id="logoutMI" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+                        <MenuItem fx:id="quitMI" mnemonicParsing="false" onAction="#quitOption" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="newClerkMI" mnemonicParsing="false" onAction="#ActionNewClerk" text="New Clerk" />
+                        <MenuItem fx:id="changePassMI" mnemonicParsing="false" onAction="#ActionChangePass" text="Change Password" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Options">
+                    <items>
+                        <MenuItem fx:id="farmersMI" mnemonicParsing="false" onAction="#FarmersView" text="Farmers" />
+                        <MenuItem fx:id="employeesMI" mnemonicParsing="false" onAction="#EmployeeView" text="Employees" />
+                        <MenuItem fx:id="attendanceMI" mnemonicParsing="false" onAction="#AttendanceView" text="Attendance" />
+                        <MenuItem fx:id="exportationMI" mnemonicParsing="false" onAction="#ExportationView" text="Exportation" />
+                        <MenuItem fx:id="chemicalMI" mnemonicParsing="false" onAction="#ChemicalsView" text="Chemicals" />
+                        <Menu mnemonicParsing="false" text="Proccess Payments">
+                            <items>
+                                <MenuItem fx:id="employeePaymentMI" mnemonicParsing="false" onAction="#EmployeePaymentsView" text="Employee" />
+                                <MenuItem fx:id="farmerpaymentsMI" mnemonicParsing="false" onAction="#FarmerPaymentsView" text="Farmer" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="Documentation" />
+                    </items>
+                </Menu>
+            </menus>
+      </MenuBar>
+      <Separator layoutX="412.0" layoutY="49.0" orientation="VERTICAL" prefHeight="685.0" prefWidth="0.0" />
+      <Separator layoutX="52.0" layoutY="294.0" prefHeight="3.0" prefWidth="303.0" />
+      <Button fx:id="btnReport" layoutX="195.0" layoutY="446.0" mnemonicParsing="false" onAction="#report" prefHeight="27.0" prefWidth="150.0" text="REPORT" />
+   </children>
+</AnchorPane>

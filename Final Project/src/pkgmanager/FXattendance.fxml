@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgmanager.FXattendanceController">
+    <stylesheets>
+        <URL value="@/pkgcommon/style.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableAttendance" layoutX="26.0" layoutY="61.0" prefHeight="670.0" prefWidth="840.0" styleClass="table-column" stylesheets="@../pkgcommon/style.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="26.0">
+         <columns>
+            <TableColumn fx:id="colEmpID" prefWidth="143.0" resizable="false" text="EMPLOYEE ID" />
+            <TableColumn fx:id="colNames" prefWidth="460.0" resizable="false" text="EMPLOYEE'S FULL NAMES" />
+            <TableColumn fx:id="colJob" minWidth="0.0" prefWidth="236.0" resizable="false" text="JOB CATEGORY" />
+         </columns>
+         
+            </TableView>
+      <Label alignment="CENTER" layoutX="1050.0" layoutY="61.0" prefHeight="44.0" prefWidth="202.0" text="LAST MONTH STATS">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="927.0" layoutY="120.0" prefHeight="175.0" prefWidth="408.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="LAST MONTH" />
+            <Label text="TOTAL ABSENTISM NUMBER" GridPane.rowIndex="1" />
+            <Label text="MAJOR ABSENTISM REASON" GridPane.rowIndex="2" />
+            <TextField fx:id="txtLastMonth" alignment="CENTER" editable="false" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtEmpsAbsent" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAbsReason" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="btnClearStats" mnemonicParsing="false" onAction="#clearLastMonthStats" prefHeight="25.0" prefWidth="200.0" text="CLEAR STATISTICS" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Separator layoutX="885.0" layoutY="321.0" prefHeight="0.0" prefWidth="464.0" />
+      <GridPane layoutX="964.0" layoutY="390.0" prefHeight="294.0" prefWidth="375.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="CURRENT MONTH NAME" />
+            <Label text="DATE" GridPane.rowIndex="1" />
+            <Label text="EMPLOYEE ID" GridPane.rowIndex="2" />
+            <Label text="ATTENDANCE STATUS" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="138.0" text="REASON" GridPane.rowIndex="5" />
+            <TextField fx:id="txtCurMonth" alignment="CENTER" editable="false" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtDate" alignment="CENTER" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtEmpID" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <RadioButton fx:id="rdPresent" mnemonicParsing="false" selected="true" text="PRESENT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <toggleGroup>
+                  <ToggleGroup fx:id="attendance" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rdAbsent" mnemonicParsing="false" text="ABSENT" toggleGroup="$attendance" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="btnRecord" mnemonicParsing="false" onAction="#recordAttendance" prefHeight="25.0" prefWidth="195.0" text="RECORD" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="cbReason" prefHeight="25.0" prefWidth="185.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Label alignment="CENTER" layoutX="986.0" layoutY="327.0" prefHeight="17.0" prefWidth="281.0" text="DAILY REGISTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <MenuBar layoutX="1.0" prefHeight="33.0" prefWidth="1366.0">
+       <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="clerkMI" mnemonicParsing="false" onAction="#clerkView" text="Clerk View" />
+                        <MenuItem fx:id="logoutMI" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+                        <MenuItem fx:id="quitMI" mnemonicParsing="false" onAction="#quitOption" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="newClerkMI" mnemonicParsing="false" onAction="#ActionNewClerk" text="New Clerk" />
+                        <MenuItem fx:id="changePassMI" mnemonicParsing="false" onAction="#ActionChangePass" text="Change Password" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Options">
+                    <items>
+                        <MenuItem fx:id="farmersMI" mnemonicParsing="false" onAction="#FarmersView" text="Farmers" />
+                        <MenuItem fx:id="employeesMI" mnemonicParsing="false" onAction="#EmployeeView" text="Employees" />
+                        <MenuItem fx:id="attendanceMI" mnemonicParsing="false" onAction="#AttendanceView" text="Attendance" />
+                        <MenuItem fx:id="exportationMI" mnemonicParsing="false" onAction="#ExportationView" text="Exportation" />
+                        <MenuItem fx:id="chemicalMI" mnemonicParsing="false" onAction="#ChemicalsView" text="Chemicals" />
+                        <Menu mnemonicParsing="false" text="Proccess Payments">
+                            <items>
+                                <MenuItem fx:id="employeePaymentMI" mnemonicParsing="false" onAction="#EmployeePaymentsView" text="Employee" />
+                                <MenuItem fx:id="farmerpaymentsMI" mnemonicParsing="false" onAction="#FarmerPaymentsView" text="Farmer" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="Documentation" />
+                    </items>
+                </Menu>
+            </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
